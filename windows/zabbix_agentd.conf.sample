@@ -1,0 +1,9 @@
+#＜＜設定例＞＞
+
+
+
+#***** Windowsサービスのディスカバリ
+# ■コンフィグ
+UserParameter=services.discovery,cscript /nologo "C:\Program Files\zabbix\services.discovery.vbs" | "C:\Program Files\zabbix\nkf32.exe" -w
+
+

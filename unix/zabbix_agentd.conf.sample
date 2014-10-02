@@ -1,0 +1,52 @@
+#＜＜設定例＞＞
+
+#***** CPU使用率の高いプロセスのディスカバリ *****
+# ■コンフィグ
+UserParameter=proc.cpu.discovery[*],/etc/zabbix/zabbix_discovery/proc.cpu.discovery.sh $1
+# ■GUI
+# keyに「　proc.cpu.discovery[5]　」と指定
+
+
+
+#***** プロセスのディスカバリ *****
+#///// 第1引数
+#  メモリ使用量     : 0
+#  仮想メモリサイズ : 1
+#///// 第2引数
+#   上位Nまで表示
+
+#--物理メモリ
+# ■コンフィグ
+UserParameter=proc.mem.rss.discovery[*],/etc/zabbix/zabbix_discovery/proc.mem.discovery.sh 0 $1
+# ■GUI
+# keyに「　proc.mem.rss.discovery[5]　」と指定
+
+
+
+#--仮想メモリ
+# ■コンフィグ
+UserParameter=proc.mem.vsz.discovery[*],/etc/zabbix/zabbix_discovery/proc.mem.discovery.sh 1 $1
+# ■GUI
+# keyに「　proc.mem.vsz.discovery[5]　」と指定
+
+
+
+#***** ディスクデバイスのディスカバリ *****
+# ■コンフィグ
+UserParameter=vfs.dev.discovery,/etc/zabbix/zabbix_discovery/vfs.dev.discovery.sh
+# ■GUI
+# keyに「　vfs.dev.discovery　」と指定
+
+
+
+#***** NTP参照先のディスカバリ *****
+# ■コンフィグ
+UserParameter=ntp.discovery,/etc/zabbix/zabbix_discovery/ntp.discovery.sh
+# ■GUI
+# keyに「　ntp.discovery 」と指定
+
+
+
+
+
+
